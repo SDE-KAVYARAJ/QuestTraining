@@ -1,0 +1,43 @@
+sum of numbers in the pattern "10_200_3_1"
+
+string pattern = "10_200_3_1";
+int sum = 0;
+string num = "";
+for (int i = 0; i < pattern.Length; i++)
+{
+    if (pattern[i] != '_')
+    {
+        num = num + pattern[i];
+    }
+    else
+    {
+        sum = sum + int.Parse(num);
+        num = "";
+    }
+}
+if (num != "")
+{
+    sum = sum + int.Parse(num);
+}
+
+Console.WriteLine(sum);
+
+
+
+
+rectangle pattern
+-----------------
+ Console.WriteLine("Enter height of rectangle");
+ int height = int.Parse(Console.ReadLine());
+ if (height < 2)
+ {
+     Console.WriteLine("Height must be at least 2 to form a rectangle.");
+     return;
+ }
+ Console.WriteLine(new string('*', 15));
+ for (int i = 0; i < height - 2; i++)
+ {
+     Console.WriteLine("*" + new string(' ', 13) + "*");
+ }
+ Console.WriteLine(new string('*', 15));
+
