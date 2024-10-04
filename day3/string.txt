@@ -1,0 +1,16 @@
+ static void Main(string[] args)
+{
+ var text = "   Hello World  ";
+ Console.WriteLine(text);                        //  Hello World
+ Console.WriteLine(text.ToLower());              //  hello world
+ Console.WriteLine(text.ToUpper());              //  HELLO WORLD
+ Console.WriteLine(text.Trim());                 //Hello World
+ Console.WriteLine(text.TrimStart());            //Hello World
+ Console.WriteLine(text.TrimEnd());              //  Hello World
+ Console.WriteLine(text.ToUpperInvariant());     //  HELLO WORLD
+ Console.WriteLine(text.Replace(" ","-"));       // ---Hello - World--
+ Console.WriteLine(text.Remove(0,7));            //o World
+ Console.WriteLine(text.Contains("hello"));      //False
+ Console.WriteLine(text.StartsWith("h"));        //False
+ Console.WriteLine(text.EndsWith("  "));         //True
+}

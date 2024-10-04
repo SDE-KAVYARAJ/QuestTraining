@@ -1,0 +1,23 @@
+// input 1,2,3,4,5 output 2,1,3,5,4
+
+static void Main(string[] args)
+{
+int[] numbers = { 1, 2, 3, 4, 5 };//2,1,3,5,4
+var firsthalf = numbers.Take(numbers.Length / 2).Reverse().ToArray();
+var secondhalf = numbers.Skip(numbers.Length / 2 + 1).Reverse().ToArray();
+firsthalf.CopyTo(numbers, 0);
+secondhalf.CopyTo(numbers, numbers.Length / 2 + 1);
+Console.WriteLine(string.Join("", numbers));
+}
+
+
+// input 1,2,3,4 output 2,1,4,3
+static void Main(string[] args)
+{
+int[] numbers = { 1, 2, 3, 4};
+var firsthalf = numbers.Take(numbers.Length / 2).Reverse().ToArray();
+var secondhalf = numbers.Skip(numbers.Length / 2).Reverse().ToArray();
+firsthalf.CopyTo(numbers, 0);
+secondhalf.CopyTo(numbers, numbers.Length / 2);
+Console.WriteLine(string.Join("", numbers));
+}
