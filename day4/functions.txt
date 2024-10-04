@@ -1,0 +1,53 @@
+//Function without parameter
+static void Greet()
+{
+    Console.WriteLine("hello");
+}
+
+//Function with parameter
+static void GreetingName(string name)
+{
+    Console.WriteLine("hello " +name);
+}
+
+//method overloading
+static void GreetingName(string firstname,string lastname)
+{
+    Console.WriteLine(firstname+lastname);
+}
+
+//Single Line Function
+static void singleline(int a,int b)=>Console.WriteLine(a+b);
+
+static int SingleLineAddwithReturn(int a,int b)=>a+b;
+
+//Function for adding two numbers
+static void add(int num1,int num2)
+{
+    int sum = num1 + num2;
+    Console.WriteLine("sum = "+sum);
+}
+
+//Function with parameter and return value
+static int Adds(int a, int b)
+{
+    return a + b;
+}
+
+static void Main(string[] args)
+{
+    Greet();
+    GreetingName("kavya");
+    GreetingName("kavitha", "kavya");
+    singleline(1,2);
+    Console.WriteLine(SingleLineAddwithReturn(1,2));
+
+    Console.WriteLine("enter first number");
+    int num1=int.Parse(Console.ReadLine());
+    Console.WriteLine("enter second number");
+    int num2 = int.Parse(Console.ReadLine());
+
+    add(num1,num2);
+    int result = Adds(1, 2);
+    Console.WriteLine(result);
+}

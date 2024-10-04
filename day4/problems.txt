@@ -1,0 +1,151 @@
+//Palindrome
+static void Main(string[] args)
+{
+Console.Write("Enter a string: ");
+string input = Console.ReadLine();
+
+var reverse = string.Concat(input.Reverse());
+
+if (input == reverse)
+{
+    Console.WriteLine("same");
+}
+}
+
+//count each word in a sentence
+static void Main(string[] args)
+{
+string text = "This is really long long text";
+string[] words = text.Split(' ');
+string[] wordsFound = new string[words.Length];
+int wordsCheckedCount = 0;
+foreach (var word in words)
+{
+    if (wordsFound.Contains(word))
+    {
+        continue;
+    }
+    int count = 0;
+    foreach (var item in words)
+    {
+        if (item==word)
+        {
+            count++;
+        }
+    }
+    wordsFound[wordsCheckedCount] = word;
+    wordsCheckedCount++;
+    Console.WriteLine($"{word}:{count}");
+}
+}
+
+//input = "one,2,three,four,2" AND output as onetwothreefourtwo
+static void Main(string[] args)
+{
+var numbers = new string[] { "one", "two", "three" };
+string input = "one,2,three,four,2";
+var inputitems = input.Replace(" ", "").Split(',');
+var sb = new StringBuilder();
+foreach (var item in inputitems)
+{
+    if (item.Length <= 2)
+        {
+            int number = int.Parse(item);
+            string text = numbers[number - 1];
+            sb.Append($"{text}");
+        }
+    else
+        {
+            sb.Append(item);
+        }
+}
+Console.WriteLine(sb.ToString());
+}
+
+
+//input as "HeLlO WoRlD" output as "hElLo wOrLd"
+static void Main(string[] args)
+{
+string input = "HeLlO WoRlD";
+string result = "";
+for (int i = 0; i < input.Length; i++)
+{
+    if (i % 2 == 0)
+    {
+        result += char.ToLower(input[i]);
+    }
+    else
+    {
+        result += char.ToUpper(input[i]);
+    }
+}
+Console.WriteLine(result);
+}
+
+
+//find vowels in a word
+
+static void Main(string[] args)
+{
+Console.WriteLine("Enter a word");
+string input = Console.ReadLine();
+string vowel = "";
+foreach (char c in input)
+{
+    if ("aeiouAEIOU".Contains(c))
+    {
+        vowel += c;
+    }
+}
+Console.WriteLine(vowel);
+}
+
+//triangle patterns-1
+static void Main(string[] args)
+{
+Console.Write("Enter the number of rows for the triangle: ");
+string input = Console.ReadLine();
+int rows = int.Parse(input);
+for (int i = 1; i <= rows; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write("* ");
+    }
+    Console.WriteLine();
+}
+}
+
+
+//triangle patterns-2
+static void Main(string[] args)
+{
+Console.Write("Enter the number of rows for the triangle: ");
+//string input = Console.ReadLine();
+int rows = int.Parse(input);
+int number = 1;
+for (int i = 1; i <= rows; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write(number + " ");
+        number++;
+    }
+    Console.WriteLine();
+}}
+
+/triangle patterns-3
+static void Main(string[] args)
+{
+Console.Write("Enter the number of rows for the triangle: ");
+string input = Console.ReadLine();
+int rows = int.Parse(input);
+for (int i = 1; i <= rows; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write(j + " ");
+
+    }
+    Console.WriteLine();
+}}
