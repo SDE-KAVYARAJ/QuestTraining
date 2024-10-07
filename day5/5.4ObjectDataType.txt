@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day5DateTime
+{
+    internal class Program
+    {
+        static void DoThis(object a, object b)
+        {
+            if (a.GetType() == typeof(string))
+            {
+                string s1 = (string)a;
+                string s2 = (string)b;
+                Console.WriteLine(s1+" "+s2);
+            }
+            else if(a.GetType() == typeof(int))
+            {
+                int i1 = (int)a;
+                int i2 = (int)b;
+                Console.WriteLine(i1 + " " + i2);
+            }
+        }    
+    
+        static void Main(string[] args)
+        {
+            object o = "hello";
+            Console.WriteLine(o.GetType());
+
+            //object converted to string
+            string s = (string)o;
+            Console.WriteLine(s.GetType());
+
+            Console.WriteLine(s.ToUpper());
+
+            DoThis(1, 2);
+            DoThis("hello","world");
+}   }   }

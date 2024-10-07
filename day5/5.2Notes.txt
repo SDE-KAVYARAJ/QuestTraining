@@ -1,0 +1,17 @@
+.sln file:
+The solution file (.sln) is a file created by Visual Studio to store information about the project and its components. It helps open and manage multiple projects in a single solution.
+
+.csproj file:
+The project file (.csproj) is an XML file in a C# project that contains details about the project, such as references, build settings, and other configurations needed to compile and run the project.
+
+bin folder:
+The "bin" (binary) folder holds the compiled output of your project, such as the executable (.exe) or library (.dll) files. It is generated during the build process.
+
+obj folder:
+The "obj" (object) folder contains intermediate files created during the build process. It holds temporary files that are needed to compile the project but are not included in the final output.
+
+Debug and Release folders:
+These folders are found inside the "bin" directory. The Debug folder contains compiled files with debugging information for testing and troubleshooting, while the Release folder contains optimized files for final deployment without debugging data.
+
+pdb file in Debug folder:
+The Program Database (PDB) file holds debugging information, such as variable names, line numbers, and stack traces. It is used to help debug the application during the development process.

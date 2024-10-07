@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day5DateTime
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //local date and time
+            DateTime dt = DateTime.Now;
+            Console.WriteLine(dt);
+
+            //UTC Time
+            DateTime dtu = DateTime.UtcNow;
+            Console.WriteLine(dtu);
+
+            Console.WriteLine($"Day : {dt.Day}");
+            Console.WriteLine($"Month : {dt.Month}");
+            Console.WriteLine($"Year : {dt.Year}");
+
+            Console.WriteLine($"Hour : {dt.Hour}");
+            Console.WriteLine($"Minute : {dt.Minute}");
+            Console.WriteLine($"Second : {dt.Second}");
+            Console.WriteLine($"Millisecond : {dt.Millisecond}");
+
+            //Date Time Operations
+            var tendaysFromNow = dt.AddDays(10);
+            Console.WriteLine(tendaysFromNow);
+
+            var tenDaysAndTwentyHoursFromNow = dt.AddDays(20).AddDays(10);
+            Console.WriteLine(tenDaysAndTwentyHoursFromNow);
+
+
+            //Formatting the output
+            Console.WriteLine("---------------");
+            Console.WriteLine($"Standard Output : {dt}");
+            Console.WriteLine(dt.ToString("dd-mm-yyyy hh:mm:ss"));
+            Console.WriteLine(dt.ToString("MM-dd-yyyy hh:mm:ss"));
+            Console.WriteLine(dt.ToString("MM/dd/yyyy hh:mm:ss"));
+            Console.WriteLine(dt.ToString("MM/dd/yyyy"));
+            Console.WriteLine(dt.ToString("hh:mm:ss"));
+
+            //Constructing Date Time
+            //we are setting the date and time
+            var myDt = new DateTime(2024, 10, 7, 12, 50, 59);
+            Console.WriteLine($"my date and time : {myDt}");
+
+            //calculate age of a person
+            Console.WriteLine("Enter date of birth");
+            DateTime dob = DateTime.Parse(Console.ReadLine());
+            int age = DateTime.Now.Year - dob.Year;
+            Console.WriteLine("age = " + age);
+        }
+    }
+}

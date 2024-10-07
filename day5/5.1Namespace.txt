@@ -1,0 +1,60 @@
+using day5.utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            StringUtilities.ToUppercase("kavya");
+            MathUtilities.add(1, 2);
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day5.utilities
+{
+    internal class MathUtilities
+    {
+        public static void add(int j,int l) => Console.WriteLine(j+l);
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace day5.utilities
+{
+    internal class StringUtilities
+    {
+        public static void ToUppercase(string str)
+        {
+            Console.WriteLine(str.ToUpper());
+        }
+        public static void ToLowercase(string str)
+        {
+            Console.WriteLine(str.ToLower());
+        }
+
+    }
+}

@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace day5dict
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //var data = new List<int>();
+            var d = new Dictionary<string, string>();
+            d.Add("fname", "kavya");
+            d.Add("lname", "raj");
+            //accessing a value
+            Console.WriteLine(d["fname"]);
+            //updating
+            d["fname"] = "kavit";
+            Console.WriteLine(d["fname"]);
+            //remove
+            d.Remove("lname");
+            //check if a key exists
+            if (d.ContainsKey("Age"))
+            {
+                Console.WriteLine("key exists");
+            }
+            else
+            {
+                Console.WriteLine("not");
+            }
+            //Looping  a dictionary
+            foreach (var item in d)
+            {
+                Console.WriteLine($"{item.Key} : {item.Value}");
+            }
+
+
+
+            //Based on registration id store marks of student and display
+            var studentMarks = new Dictionary<string, List<int>>();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Enter registration number : ");
+                string regNumber = Console.ReadLine();
+
+
+                var marks = new List<int>();
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"Enter mark {j + 1}  : ");
+                    int mark = int.Parse(Console.ReadLine());
+                    marks.Add(mark);
+                }
+                studentMarks[regNumber] = marks;
+            }
+            foreach (var item in studentMarks)
+
+            {
+                Console.WriteLine($"{item.Key} : {string.Join(",", item.Value)}");
+            }
+        }
+    }
+}
