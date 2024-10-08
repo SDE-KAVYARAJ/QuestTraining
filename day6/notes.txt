@@ -1,0 +1,35 @@
+-->DATABASE
+A database is an organized collection of structured data that can be easily accessed, managed, and updated, typically stored electronically in a computer system.
+
+-->RELATIONAL DATABASE
+Relational databases use structured tables with predefined schemas and relationships (e.g., SQL)
+Relational databases include MySQL, PostgreSQL, and Oracle
+
+--> NON-RELATIONAL DATABASE
+Non-relational databases store data in flexible, schema-less formats like documents, key-value pairs, or graphs (e.g., NoSQL).
+Non-relational databases include MongoDB, CouchDB, and Cassandra.
+
+-->PRIMARY KEY
+A primary key uniquely identifies each record in a table
+
+-->FOREIGN KEY
+A foreign key establishes a relationship between two tables by referencing a primary key.
+
+-->CONSTRAINTS
+Constraints enforce rules on the data to maintain integrity and consistency within the database.
+
+ NOT NULL (ensures a column cannot have a NULL value), 
+ UNIQUE (ensures all values in a column are distinct), 
+ CHECK (validates data against a specified condition), 
+ DEFAULT (sets a default value for a column if none is specified),
+ FOREIGN KEY (maintains referential integrity between two tables).
+
+
+-->RELATIONSHIP IN A DATABASE
+One-to-One (1:1): Each record in one table corresponds to exactly one record in another table (e.g., a person and their unique identification document).
+
+One-to-Many (1  ): A record in one table can be associated with multiple records in another table (e.g., a teacher can teach multiple classes).
+
+Many-to-Many (M  ): Records in one table can relate to multiple records in another table and vice versa (e.g., students can enroll in multiple courses, and each course can have multiple students).
+
+Many-to-One (M:1): Multiple records in one table can relate to a single record in another table (e.g., many students can belong to one class)
