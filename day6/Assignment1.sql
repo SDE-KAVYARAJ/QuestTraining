@@ -1,3 +1,14 @@
+--You are working on a database for a school’s student management system. The system contains a table named courses that stores information about the courses offered at the school and the students enrolled in them.
+--You have been tasked to generate a report that shows the following information for each course:
+--The total number of students enrolled.
+--The total fees collected for each course.
+--The course with the maximum number of enrollments.
+--Write SQL queries to accomplish the following tasks:
+--
+--1)Find the total number of students enrolled in each course: The result should display the course_name and the total count of students enrolled in that course.
+--2)Calculate the total fees collected for each course: The result should display the course_name and the sum of the course_fee collected.
+--3)Determine the course with the maximum number of enrollments: Display the course_name and the number of students enrolled for the course with the highest enrollment
+
 CREATE TABLE course_enrollments (
     course_id INT,
     course_name VARCHAR(100),
