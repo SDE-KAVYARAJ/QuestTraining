@@ -1,0 +1,122 @@
+-->SQL COMMANDS
+
+DDL (Data Definition Language): Manages the structure of the database. Key commands include:
+    CREATE: Create a new table or database.
+        CREATE TABLE table_name (
+        column1 datatype constraints,
+        column2 datatype constraints,...);
+
+    ALTER: Modify an existing table structure.
+        ALTER TABLE table_name
+        ADD column_name datatype;
+
+        ALTER TABLE table_name
+        DROP COLUMN column_name;
+
+    DROP: Delete a table or database.
+        DROP TABLE table_name;
+
+    TRUNCATE: Removes all rows from a table quickly, resetting identity columns, but retains the table structure.
+        TRUNCATE TABLE table_name;
+
+DML (Data Manipulation Language): Handles data manipulation within tables. Key commands include:
+    INSERT: Add new records.
+        INSERT INTO table_name (column1, column2, ...)
+        VALUES (value1, value2, ...);
+
+    UPDATE: Modify existing records.
+        UPDATE table_name
+        SET column1 = value1, column2 = value2, ...
+        WHERE condition;
+
+    DELETE: Remove records from a table.
+        DELETE FROM table_name
+        WHERE condition;
+
+
+DCL (Data Control Language): Controls access to data and user permissions. Key commands include:
+    GRANT: Provide user access rights.
+    REVOKE: Remove user access rights.
+
+TCL (Transaction Control Language): Manages transactions to ensure data integrity. Key commands include:
+    COMMIT: Save changes made during the transaction.
+    ROLLBACK: Undo changes made during the transaction.
+    SAVEPOINT: Set a point within a transaction to which you can roll back.
+
+DQL (Data Query Language): Retrieves data from the database. The primary command is:
+    SELECT: Query to fetch data from one or more tables
+        SELECT column1, column2, ...
+        FROM table_name
+        WHERE condition
+        ORDER BY column ASC|DESC
+        GROUP BY column
+        HAVING condition;
+
+WHERE:
+    Filters rows based on specified conditions before grouping or aggregation
+    (e.g., WHERE age > 30).
+
+ORDER BY:
+     Sorts the result set in ascending or descending order based on one or more columns (e.g., ORDER BY salary DESC).
+
+HAVING: 
+    Filters groups after aggregation (e.g., HAVING COUNT(*) > 1), used with GROUP BY.
+
+GROUP BY: 
+    Groups rows that share a value in specified columns for aggregate functions (e.g., GROUP BY department).
+
+AGGREGATE FUNCTIONS
+    perform calculations on a set of values and return a single result. Common aggregate functions include:
+        SUM(): Returns the total sum of a numeric column.
+        COUNT(): Counts the number of rows or non-NULL values.
+        AVG(): Returns the average value of a numeric column.
+        MAX(): Returns the highest value in a column.
+        MIN(): Returns the lowest value in a column.
+    These functions are often used with GROUP BY for grouping data.
+
+SUBQUERIES 
+    Subqueries are nested queries inside a main query that return a result used by the outer query
+    (e.g., SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);).
+
+STORED PROCEDURE
+    is a precompiled collection of SQL statements that can be executed as a single unit to perform a specific task
+    (e.g., inserting data or retrieving results).
+    
+    CREATE PROCEDURE procedure_name 
+    @parameter1 datatype,
+    @parameter2 datatype,
+    ...
+    AS
+    BEGIN
+        -- SQL statements
+    END;
+
+VIEWS
+    virtual tables created by a stored query that encapsulates complex SQL logic, allowing users to simplify data access without altering the underlying tables
+    (e.g., CREATE VIEW active_employees AS SELECT * FROM employees WHERE status = 'active';).
+
+    Limitation:-Read-Only: Many views are read-only, meaning you cannot insert, update, or delete records directly through them.
+
+    CREATE VIEW view_name AS
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition;
+
+FUNCTION
+    reusable block of code that performs a specific task, takes inputs (parameters), and returns a single output value, allowing for modular programming and improved code organization
+    (e.g., CREATE FUNCTION get_total_price(quantity INT, price DECIMAL) RETURNS DECIMAL AS BEGIN RETURN quantity * price; END;).
+
+TRIGGERS
+    automated procedures that execute in response to specific events on a table, such as INSERT, UPDATE, or DELETE, allowing for actions like data validation, logging, or enforcing business rules
+    CREATE TRIGGER trigger_name
+    ON table_name
+    AFTER|BEFORE|INSTEAD OF INSERT|UPDATE|DELETE
+    AS
+    BEGIN
+        -- SQL statements
+    END;
+
+
+DISTINCT
+    SQL keyword used in a query to remove duplicate rows from the result set, returning only unique values for specified columns
+    (e.g., SELECT DISTINCT department FROM employees;).
