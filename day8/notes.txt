@@ -1,0 +1,69 @@
+1.- VARCHAR(n)
+Description: Variable-length string data type.
+Usage: Suitable for non-Unicode characters and storing strings up to n characters.
+Storage: Uses 1 byte per character plus 2 bytes for length.
+
+2. -NVARCHAR(n)
+Description: Variable-length Unicode string data type.
+Usage: Ideal for storing international characters and text, supporting multiple languages.
+Storage: Uses 2 bytes per character plus 2 bytes for length.
+
+3. CHAR(n)
+Description: Fixed-length string data type.
+Usage: Best for strings of a known fixed size, padding shorter strings with spaces.
+Storage: Uses 1 byte per character.
+
+4. NCHAR(n)
+Description: Fixed-length Unicode string data type.
+Usage: Similar to CHAR, but supports Unicode characters.
+Storage: Uses 2 bytes per character.
+
+5. TEXT
+Description: Variable-length string for large amounts of text.
+Usage: Suitable for lengthy text data but less efficient for indexing.
+Note: Consider using VARCHAR(MAX) instead.
+
+6. IMAGE
+Description: For storing binary data, such as images.
+Usage: Large binary data but inefficient for indexing.
+Note: Use VARBINARY(MAX) as an alternative.
+
+7. INT
+Description: Integer data type.
+Usage: Used for whole numbers.
+Storage: 4 bytes.
+
+8. BIGINT
+Description: Large integer data type.
+Usage: For very large whole numbers.
+Storage: 8 bytes.
+
+9. FLOAT
+Description: Floating-point number data type.
+Usage: Used for approximate numeric values.
+Storage: 4 bytes (single precision) or 8 bytes (double precision).
+
+10. DECIMAL(p, s)
+Description: Fixed-point numeric data type.
+Usage: Used for exact numeric values, such as currency.
+Storage: Varies based on precision.
+
+11. DATETIME
+Description: Date and time data type.
+Usage: Used to store dates and times.
+Storage: 8 bytes.
+
+12. DATE
+Description: Stores date only.
+Usage: Useful for storing birthdates or event dates.
+Storage: 3 bytes.
+
+13. TIME
+Description: Stores time only.
+Usage: Used for tracking time of day.
+Storage: 3 bytes.
+
+14. BIT
+Description: Stores Boolean values (0 or 1).
+Usage: Ideal for flags or true/false values.
+Storage: 1 byte.
