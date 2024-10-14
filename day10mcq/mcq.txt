@@ -1,0 +1,58 @@
+Which of the following collection types maintains key-value pairs in C#?
+Dictionary
+
+Which method is used to add elements to a List in C#?
+Add()
+
+Which keyword is used to pass arguments by reference in C#?
+ref
+
+Which of the following allows dynamic resizing in C#?
+List
+
+Which of the following is a correct way to initialize a dictionary in C#?
+Dictionary<int, string> dict = new Dictionary<int, string>();
+
+Which of the following is a value type in C#?
+Int
+
+Which of the following data types cannot store a null value?
+int
+
+What is the default accessibility of class members in C#?
+private
+
+Which of the following is NOT a value type in C#?
+class
+
+What does the params keyword allow in C#?
+Pass a variable number of arguments
+
+In C#, object is a reference type
+
+Which of these keywords is used to make a variable nullable?
+?
+
+What is the size of an int in C#?
+4 bytes
+
+Which of the following is a correct declaration of a method with default parameters?
+void MyMethod(int x = 10)
+
+What will be the output of the following code? int? a = null; Console.WriteLine(a ?? 0);
+0
+
+Which of the following is immutable in C#?
+String
+
+Which of the following keywords is used to handle exceptions in C#?
+try
+
+Which method in C# is used to split a string into an array?
+ Split()
+
+Which of the following allows duplicate keys in C#?
+None of the above
+
+What is the default value of a nullable integer (int?) in C#?
+null
