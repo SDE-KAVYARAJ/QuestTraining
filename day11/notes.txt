@@ -1,0 +1,29 @@
+What is OOP in C#?
+OOP (Object-Oriented Programming) in C# is a way to organize code by using classes and objects. 
+It makes programs easier to understand by grouping related data and actions together.
+
+Class:
+A class is a blueprint or template that defines the properties (data) and methods (actions) that an object will have.
+Example: A class Car might have properties like color and model and methods like Start() and Stop().
+
+Object: An object is an instance of a class. Once a class is defined, you can create multiple objects from it.
+
+Main concepts:
+Encapsulation – Hides internal details and protects data.
+Abstraction – Shows only essential details, hiding the complexity.
+Inheritance – Reuses code by creating new classes from existing ones.
+Polymorphism – Allows objects to behave differently based on context.
+
+Benefits of OOP in C#
+Reusability: Use existing code through inheritance, saving time and effort.
+Easy to Maintain: Fixing or updating code is simpler because of the modular structure.
+Better Security: Access to data can be restricted with access modifiers (like private).
+Scalable: New features can be added easily without changing existing code.
+Real-World Mapping: Objects in code reflect real-world things, making it easier to understand.
+
+Drawbacks of OOP in C#
+Too Complex for Small Programs: OOP may feel heavy for simple tasks.
+Uses More Memory: Needs more resources to run.
+Hard to Learn: Concepts like inheritance can confuse beginners.
+Takes Time: Planning classes takes longer.
+Not Always Necessary: Simple scripts don’t need OOP
