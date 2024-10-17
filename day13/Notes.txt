@@ -1,0 +1,78 @@
+1. Static
+Definition: A static member belongs to the class rather than any instance of the class.
+Behavior:
+Shared across all instances.
+You don't need to create an object to access a static member.
+Can be used for fields, properties, methods, and constructors.
+Key Points:
+Static members are loaded only once, when the class is first accessed.
+A static constructor initializes static fields.
+public class Employee
+{
+    public static int EmployeeCount = 0;  // Shared across all instances
+
+    public Employee()
+    {
+        EmployeeCount++;  // Increment when a new Employee is created
+    }
+}
+
+2. Const
+Definition: A const keyword is used to declare a constant value that is assigned at compile-time and cannot be changed later.
+Behavior:
+Must be initialized at the time of declaration.
+Constants are implicitly static and can be accessed without creating an instance.
+Key Points:
+Constants are immutable.
+Only primitive types or strings can be declared as const.
+
+public class MathConstants
+{
+    public const double Pi = 3.14159;  // Fixed value
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine($"Value of Pi: {MathConstants.Pi}");  // Output: 3.14159
+    }
+}
+
+
+3. Static Readonly
+Definition: A static readonly field is a combination of static and readonly.
+Behavior:
+The value can only be assigned during declaration or inside a static constructor.
+Unlike const, static readonly allows runtime assignment, making it more flexible.
+Key Points:
+Useful when you need a constant-like value but determined at runtime.
+Since it is static, it is shared across all instances of the class.
+public class AppSettings
+{
+    public static readonly string Version;
+
+    // Static constructor to set the value
+    static AppSettings()
+    {
+        Version = "1.0.0";
+    }
+}
+
+4. Readonly
+Definition: A readonly field can only be assigned during declaration or inside a constructor. After initialization, the value cannot be changed.
+Behavior:
+Unlike const, the value is determined at runtime, making it more flexible.
+It is not implicitly static, so every instance of the class can have its own copy of the readonly field.
+Key Points:
+Readonly fields allow different values for each object, unlike const.
+It ensures immutability after object initialization but offers runtime flexibility.
+public class Employee
+{
+    public readonly string EmployeeId;  // Assigned only once
+
+    public Employee(string id)
+    {
+        EmployeeId = id;  // Initialize in the constructor
+    }
+}
