@@ -1,0 +1,182 @@
+using System;
+using System.Data.SqlClient;
+
+namespace DB2
+{
+    public class Program
+    {
+        // ContactRepository class to handle database operations
+        public class ContactRepository
+        {
+            private readonly string _connStr;
+
+            public ContactRepository(string connStr)
+            {
+                _connStr = connStr;
+            }
+
+            public void CreateContactsTable()
+            {
+                var conn = new SqlConnection(_connStr);
+                {
+                    conn.Open();
+                    var command = new SqlCommand(@"CREATE TABLE Contacts (
+                        ContactId INT PRIMARY KEY IDENTITY(1, 1),
+                        Name NVARCHAR(100) NOT NULL,
+                        Phone NVARCHAR(15) NOT NULL,
+                        Email NVARCHAR(100) NOT NULL
+                    )", conn);
+                    command.ExecuteNonQuery();
+                }
+            }
+            // Method to add a new contact
+            public void AddContact(string name, string phone, string email)
+            {
+                var conn = new SqlConnection(_connStr);
+                {
+                    conn.Open();
+                    var command = new SqlCommand("INSERT INTO Contacts (Name, Phone, Email) VALUES (@Name, @Phone, @Email)", conn);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Contact added successfully.");
+                }
+            }
+
+            // Method to search for a contact by ID
+            public void SearchContactById(int id)
+            {
+                var conn = new SqlConnection(_connStr);
+                {
+                    conn.Open();
+                    var command = new SqlCommand("SELECT * FROM Contacts WHERE ContactId = @Id", conn);
+                    command.Parameters.AddWithValue("@Id", id);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine($"ID: {reader["ContactId"]}, Name: {reader["Name"]}, Phone: {reader["Phone"]}, Email: {reader["Email"]}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No contact found with that ID.");
+                        }
+                    }
+                }
+            }
+
+            // Method to update a contact by ID
+            public void UpdateContactById(int id, string newPhone, string newEmail)
+            {
+                var conn = new SqlConnection(_connStr);
+                {
+                    conn.Open();
+                    var command = new SqlCommand("UPDATE Contacts SET Phone = @NewPhone, Email = @NewEmail WHERE ContactId = @Id", conn);
+                    command.Parameters.AddWithValue("@NewPhone", newPhone);
+                    command.Parameters.AddWithValue("@NewEmail", newEmail);
+                    command.Parameters.AddWithValue("@Id", id);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine(rowsAffected > 0 ? "Contact updated successfully." : "No contact found with that ID.");
+                }
+            }
+
+            // Method to delete a contact by ID
+            public void DeleteContactById(int id)
+            {
+                var conn = new SqlConnection(_connStr);
+                {
+                    conn.Open();
+                    var command = new SqlCommand("DELETE FROM Contacts WHERE ContactId = @Id", conn);
+                    command.Parameters.AddWithValue("@Id", id);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine(rowsAffected > 0 ? "Contact deleted successfully." : "No contact found with that ID.");
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            var connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kavya\OneDrive\Documents\QuestDB.mdf;Integrated Security=True;Connect Timeout=30";
+            var repository = new ContactRepository(connStr);
+            repository.CreateContactsTable();
+
+            while (true)
+            {
+                Console.WriteLine("\nPhonebook Management System");
+                Console.WriteLine("1. Add Contact");
+                Console.WriteLine("2. Search Contact by ID");
+                Console.WriteLine("3. Update Contact by ID");
+                Console.WriteLine("4. Delete Contact by ID");
+                Console.WriteLine("5. Exit");
+                Console.Write("Choose an option: ");
+
+                string choice = Console.ReadLine();
+                if (choice == "5")
+                {
+                    break;
+                }
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Enter Name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Enter Phone: ");
+                        string phone = Console.ReadLine();
+                        Console.Write("Enter Email: ");
+                        string email = Console.ReadLine();
+                        repository.AddContact(name, phone, email);
+                        break;
+
+                    case "2":
+                        Console.Write("Enter Contact ID to search: ");
+                        if (int.TryParse(Console.ReadLine(), out int searchId))
+                        {
+                            repository.SearchContactById(searchId);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID format.");
+                        }
+                        break;
+
+                    case "3":
+                        Console.Write("Enter Contact ID to update: ");
+                        if (int.TryParse(Console.ReadLine(), out int updateId))
+                        {
+                            Console.Write("Enter new Phone: ");
+                            string newPhone = Console.ReadLine();
+                            Console.Write("Enter new Email: ");
+                            string newEmail = Console.ReadLine();
+                            repository.UpdateContactById(updateId, newPhone, newEmail);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID format.");
+                        }
+                        break;
+
+                    case "4":
+                        Console.Write("Enter Contact ID to delete: ");
+                        if (int.TryParse(Console.ReadLine(), out int deleteId))
+                        {
+                            repository.DeleteContactById(deleteId);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID format.");
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
+            }
+        }
+    }
+}
