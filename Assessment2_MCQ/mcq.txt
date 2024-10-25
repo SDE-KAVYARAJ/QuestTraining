@@ -1,0 +1,150 @@
+1.What does the this keyword represent in C#?
+  The current instance of the class
+
+2.What type of method can be overridden in a derived class?
+  virtual
+
+3.What will be the result of the expression 5 / 2 in C#?
+  2
+
+4.What does the params keyword do in C#?
+  Allows a variable number of arguments 
+
+5.What is the difference between == and .Equals() in C#?
+  == compares object references, .Equals() compares values 
+
+6.What is boxing in C#?
+  Converting a value type to a reference type
+ 
+7.Which of the following is the correct way to define a property in C#?
+  public int Age { get; set; }
+
+8.What is the purpose of the using statement in C#?
+  To dispose of objects after usage
+
+9.Which access modifier restricts access to the current class only?
+  private
+
+10.Which method from System.Object class is used to create a shallow copy of an object?
+  Clone()
+
+11.Which operator is used to access members of a class in C#?
+  . (dot operator)
+
+12.Which keyword is used to inherit a class in C#?
+   :
+
+13.What does the lock keyword do in C#?
+  Ensures a section of code is thread-safe
+
+14.What is the output of the following code?
+  5
+
+15.How do you handle exceptions in C#?
+  try-catch
+
+16.Which of these collections is ordered in C#?
+  List
+
+17.What does the null keyword represent in C#?
+  A value that does not exist
+
+18.Which collection class allows the fastest lookup based on a key?
+  Dictionary
+
+19.Which of the following is not a valid keyword in C#?
+  implement
+
+20.What does static keyword mean in C#?
+  The member is associated with the class rather than any instance
+
+21.Which loop continues executing as long as a condition is true?
+  while
+
+22.What is the default value of a bool variable in C#?
+  false
+
+23.What is a partial class in C#?
+  A class that can be split into multiple files
+
+24.What is the readonly keyword used for in C#?
+  To create a variable whose value can only be assigned at declaration or in the constructor
+
+25.What is the default value of an int in C#?
+   0
+
+26.Which keyword in C# is used to indicate that a class implements an interface?
+  None (use : for inheritance)
+
+27.Which keyword is used to define an interface in C#?
+  interface
+
+28.Which of the following is the correct way to declare an array in C#?
+   int[] arr = new int[5];
+
+29.How do you define a constant value in C#?
+  const
+
+30.Which of the following is NOT a valid C# data type?
+   number
+
+31.Which of these is a correct way to declare a delegate in C#?
+  delegate void MyDelegate(int x);
+
+32.What is the difference between ref and out parameters in C#?
+  ref requires initialization before use, out does not
+
+33.Which of the following is the correct way to define a single-line comment in C#?
+  // Comment
+
+34.What does the default keyword do in C#?
+  Returns the default value of a type
+
+35.What is the correct way to declare a variable in C#?
+  int x = 5;
+
+36.Which method must be implemented when using IEnumerator<T> in C#?
+   MoveNext()
+
+37.Which keyword is used to invoke the base class constructor in a derived class?
+   base
+
+38.What is a tuple in C#?
+   A value type that can store multiple values of different types
+
+39.Which data structure does C# Queue<T> implement
+   First In First Out (FIFO)
+
+40.What keyword is used to make a class non-inheritable in C#?
+   sealed
+
+41.Which of these is an immutable type in C#?
+  String
+
+42.Which access modifier allows access to a member from any part of the code?
+  public
+
+43.Which of these types is a reference type?
+  string
+
+44.What does the is keyword check in C#?
+   If an object is of a particular type
+
+45.What is an indexer in C#?
+    A way to access elements of a class using an index
+
+46.What is the default return type of a constructor in C#?
+    None (constructors do not return values)
+
+47.What is the purpose of the abstract keyword in C#?
+     To define a class that cannot be instantiated
+
+48.What is the purpose of the await keyword in C#?
+     To pause execution of a method until the awaited task completes
+
+49.Which statement is used to terminate a loop in C#?
+    break
+
+50.What does the new keyword do in C#?
+    Creates a new object
+
