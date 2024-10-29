@@ -1,0 +1,19 @@
+SOLID PRINCIPLES
+
+Single Responsibility Principle (SRP)
+ A class should have only  one responsibility.
+
+Open/Closed Principle (OCP)
+Software entities like classes, modules, and functions should be open for extension but closed for modification.
+
+Liskov Substitution Principle (LSP)
+Sub types Or derived types should be a substitute for their base type fully
+
+Interface Segregation Principle (ISP)
+A class should not be forced to implement an interface if it only needs a portion of its methods.
+Instead of creating large, generic interfaces, create smaller, more specific ones that cater to the exact 
+requirements of each class.
+
+Dependency Inversion Principle (DIP)
+High-level modules should not depend on low-level modules but on abstractions,
+and abstractions should not depend on details.
